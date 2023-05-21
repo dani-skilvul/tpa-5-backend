@@ -12,7 +12,7 @@ const todoRoute = express.Router();
 todoRoute.post("/todo", addTodoController);
 todoRoute.get("/todos", getTodosController);
 todoRoute.get("/todo/:id", getTodoByIdController);
-todoRoute.put("/todo", editTodoByIdController);
-todoRoute.delete("/todo", deleteTodoByIdController);
+todoRoute.put("/todo/:id", editTodoByIdController);
+todoRoute.delete("/todo/:id", deleteTodoByIdController);
 
 module.exports = todoRoute;
