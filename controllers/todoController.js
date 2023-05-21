@@ -23,8 +23,15 @@ const addTodoController = async (req, res) => {
     return res.status(500).json({ message: error.message });
   }
 };
-const getTodosController = (req, res) => {};
-const getTodoByIdController = (req, res) => {};
+const getTodosController = async (req, res) => {
+  try {
+    const data = await Todo.findAll();
+    res.json(data);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
+const getTodoByIdController = async (req, res) => {};
 const editTodoByIdController = (req, res) => {};
 const deleteTodoByIdController = (req, res) => {};
 
