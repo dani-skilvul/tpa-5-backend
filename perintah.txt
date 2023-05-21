@@ -1,0 +1,5 @@
+npx sequelize-cli model:generate --name Todo --attributes todo:string --force
+
+npx sequelize-cli model:generate --name User --attributes nama:string,email:string,password:string,role:string --force
+
+npx sequelize-cli db:migrate

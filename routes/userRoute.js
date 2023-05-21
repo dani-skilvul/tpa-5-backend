@@ -7,12 +7,12 @@ const {
   deleteUserByIdController,
 } = require("../controllers/userController");
 
-const routeUser = express.Router();
+const userRoute = express.Router();
 
-routeUser.post("/user", addUserController);
-routeUser.get("/users", getUsersController);
-routeUser.get("/user/:id", getUserByIdController);
-routeUser.edit("/user", editUserByIdController);
-routeUser.delete("/user", deleteUserByIdController);
+userRoute.post("/user", addUserController);
+userRoute.get("/users", getUsersController);
+userRoute.get("/user/:id", getUserByIdController);
+userRoute.put("/user", editUserByIdController);
+userRoute.delete("/user", deleteUserByIdController);
 
-module.exports = routeUser;
+module.exports = userRoute;

@@ -14,7 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Todo.init({
-    id: DataTypes.INTEGER,
     todo: DataTypes.STRING
   }, {
     sequelize,

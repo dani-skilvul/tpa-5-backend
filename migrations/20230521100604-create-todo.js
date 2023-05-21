@@ -5,12 +5,9 @@ module.exports = {
     await queryInterface.createTable("Todos", {
       id: {
         allowNull: false,
-        autoIncrement: true,
+        autoIncrement: false,
         primaryKey: true,
-        type: Sequelize.INTEGER,
-      },
-      id: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       todo: {
         type: Sequelize.STRING,

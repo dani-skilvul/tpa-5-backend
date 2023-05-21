@@ -2,6 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 const db = require("./config/db");
+const todoRoute = require("./routes/todoRoute");
+const userRoute = require("./routes/userRoute");
 
 const app = express();
 const port = 3030;
@@ -12,6 +14,8 @@ dotenv.config();
 // pake middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(userRoute);
+app.use(todoRoute);
 
 // cek koneksi db
 (async () => {

@@ -7,12 +7,12 @@ const {
   deleteTodoByIdController,
 } = require("../controllers/todoController");
 
-const routeTodo = express.Router();
+const todoRoute = express.Router();
 
-routeTodo.post("/todo", addTodoController);
-routeTodo.get("/todos", getTodosController);
-routeTodo.get("/todo/:id", getTodoByIdController);
-routeTodo.edit("/todo", editTodoByIdController);
-routeTodo.delete("/todo", deleteTodoByIdController);
+todoRoute.post("/todo", addTodoController);
+todoRoute.get("/todos", getTodosController);
+todoRoute.get("/todo/:id", getTodoByIdController);
+todoRoute.put("/todo", editTodoByIdController);
+todoRoute.delete("/todo", deleteTodoByIdController);
 
-module.exports = routeTodo;
+module.exports = todoRoute;
