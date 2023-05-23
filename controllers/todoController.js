@@ -40,7 +40,7 @@ const getTodosController = async (req, res) => {
     const todos = await Todo.findAll();
     return res.json(todos);
   } catch (error) {
-    returnres.status(400).json({ message: error.message });
+    return res.status(400).json({ message: error.message });
   }
 };
 
