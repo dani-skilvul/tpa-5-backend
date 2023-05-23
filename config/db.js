@@ -11,6 +11,9 @@ const db = new Sequelize(
   {
     host: dbConfig.host,
     dialect: dbConfig.dialect,
+    define: {
+      timestamps: false,
+    },
   }
 );
 

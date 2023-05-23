@@ -2,6 +2,6 @@
 npx sequelize-cli model:generate --name Todo --attributes todo:string --force
 
 --tabel user
-npx sequelize-cli model:generate --name User --attributes nama:string,email:string,password:string --force
+npx sequelize-cli model:generate --name User --attributes nama:string,password:string --force
 
 npx sequelize-cli db:migrate

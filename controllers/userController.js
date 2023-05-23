@@ -1,10 +1,8 @@
 const User = require("../models").User;
-const { nanoid } = require("nanoid");
 const bcrypt = require("bcrypt");
 
 const registerUserController = async (req, res) => {
   try {
-    const id = nanoid(6);
     const { nama, email, password, confPassword } = req.body;
 
     // validasi: data harus terisi semua
@@ -25,15 +23,27 @@ const registerUserController = async (req, res) => {
       });
     }
 
+    // validasi: cek apakah Email sudah digunakan
+    checkUserWithEmail = await User.findOne({
+      where: {
+        email,
+      },
+    });
+    if (checkUserWithEmail) {
+      return res.status(400).json({
+        status: "error",
+        message: "Email sudah digunakan",
+      });
+    }
+
     // hashing password
     const salt = await bcrypt.genSalt();
     const hashPassword = await bcrypt.hash(password, salt);
 
     // buat object newUser
     const newUser = {
-      id,
-      nama,
       email,
+      nama,
       password: hashPassword,
     };
 
@@ -45,11 +55,11 @@ const registerUserController = async (req, res) => {
       status: "success",
       message: "User berhasil dibuat",
       data: {
-        userId: id,
+        email,
       },
     });
   } catch (error) {
-    return res.status(500).json({ message: error.message });
+    return res.status(500).json(error);
   }
 };
 
