@@ -1,4 +1,5 @@
 const express = require("express");
+const authenticateToken = require("../middleware/authenticateToken");
 const {
   addTodoController,
   getTodosController,
@@ -9,10 +10,10 @@ const {
 
 const todoRoute = express.Router();
 
-todoRoute.post("/todo", addTodoController);
-todoRoute.get("/todos", getTodosController);
-todoRoute.get("/todo/:id", getTodoByIdController);
-todoRoute.put("/todo/:id", editTodoByIdController);
-todoRoute.delete("/todo/:id", deleteTodoByIdController);
+todoRoute.post("/todo", authenticateToken, addTodoController);
+todoRoute.get("/todos", authenticateToken, getTodosController);
+todoRoute.get("/todo/:id", authenticateToken, getTodoByIdController);
+todoRoute.put("/todo/:id", authenticateToken, editTodoByIdController);
+todoRoute.delete("/todo/:id", authenticateToken, deleteTodoByIdController);
 
 module.exports = todoRoute;

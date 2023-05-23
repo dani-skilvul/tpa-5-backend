@@ -7,6 +7,6 @@ const {
 const userRoute = express.Router();
 
 userRoute.post("/register", registerUserController);
-userRoute.get("/login", loginUserController);
+userRoute.post("/login", loginUserController);
 
 module.exports = userRoute;

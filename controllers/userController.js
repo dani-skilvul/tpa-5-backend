@@ -104,15 +104,14 @@ const loginUserController = async (req, res) => {
       { email, password },
       process.env.ACCESS_TOKEN_SECRET,
       {
-        expiresIn: "15s",
+        expiresIn: "60s",
       }
     );
 
     // berikan response success
-    return res.json({
+    return res.header("Authorization", token).json({
       status: "success",
       message: "Login berhasil",
-      token,
     });
   } catch (error) {
     return res.status(500).json({ message: error.message });
