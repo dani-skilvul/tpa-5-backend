@@ -23,7 +23,6 @@ app.use(todoRoute);
 (async () => {
   try {
     await db.authenticate();
-    console.log(process.env.NODE_ENV);
     console.log("Koneksi sukses terhubung.");
   } catch (error) {
     console.error("Tidak dapat terhubung ke database:", error);
