@@ -39,7 +39,7 @@ npm install
 ```sh
 npm run start
 ```
-Jika ingin menggunakan library Nodemon untuk hot-reloading saat pengembangan, jalankan perintah berikut:
+  Jika ingin menggunakan library Nodemon untuk hot-reloading saat pengembangan, jalankan perintah berikut:
 ```sh
 npm run dev
 ```
