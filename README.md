@@ -32,7 +32,7 @@ git clone https://github.com/dani-skilvul/tpa-5-backend.git
 
 3. Import file 'skilvul_todo.sql' yang terdapat di dalam folder 'import' ke dalam database MySQL Anda.
 
-4. Buatlah file '.env' diarea terluar pada project ini, isilah file '.env' dengan kode berikut
+4. Buatlah file '.env' diarea terluar pada project ini, isilah file '.env' dengan kode berikut:
 
 ```sh
 ACCESS_TOKEN_SECRET=silahkan_masukkan_key_bebas_untuk_token_jwt_login_disini
