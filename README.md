@@ -1,4 +1,5 @@
 
+
 **Nama : Muhammad Dani Haikal**  
 **Tim : BE-8**  
 **Mentor : Luthfi Fitra Musyaffa**
@@ -60,14 +61,42 @@ Untuk melakukan pengujian API, Anda dapat menggunakan Postman atau alat serupa. 
 1. Impor file 'Skilvul-TPA-5-Backend.postman_collection.json' yang terdapat di dalam folder 'import' ke dalam koleksi Postman Anda.
 
 2. Sebelum melakukan operasi CRUD pada entri todo, Anda perlu membuat akun terlebih dahulu dan melakukan login. Gunakan rute-rute berikut:
-- POST http://localhost:3030/register: Rute untuk mendaftar pengguna baru.
-- POST http://localhost:3030/login: Rute untuk melakukan login dan menghasilkan token JWT yang disimpan di header 'Authorization' dengan waktu kadaluwarsa 60 detik.
+- POST http://localhost:3030/register: Rute untuk mendaftar pengguna baru.  
+Contoh Request Body :
+```sha
+{
+	"nama": "dani",
+	"email": "dani@gmail.com",
+	"password": "123",
+	"confPassword": "123"
+}
+```
+- POST http://localhost:3030/login: Rute untuk melakukan login dan menghasilkan token JWT yang disimpan di header 'Authorization' dengan waktu kadaluwarsa 60 detik.  
+Contoh Request Body :
+```sha
+{
+	"email": "dani@gmail.com",
+	"password": "123",
+}
+```
 
 3. Setelah berhasil login, Anda dapat menggunakan token JWT yang dihasilkan untuk mengakses rute-rute operasi todo berikut:
-- POST http://localhost:3030/todo: Rute untuk membuat entri todo baru.
+- POST http://localhost:3030/todo: Rute untuk membuat entri todo baru.  
+Contoh Request Body :
+```sha
+{
+	"todo": "Saya akan makan"
+}
+```
 - GET http://localhost:3030/todos: Rute untuk melihat semua entri todo.
 - GET http://localhost:3030/todo/:id: Rute untuk melihat detail satu entri todo berdasarkan ID.
-- PUT http://localhost:3030/todo/:id: Rute untuk mengedit satu entri todo berdasarkan ID.
+- PUT http://localhost:3030/todo/:id: Rute untuk mengedit satu entri todo berdasarkan ID.  
+Contoh Request Body :
+```sha
+{
+	"todo": "Saya akan belajar"
+}
+```
 - DELETE http://localhost:3030/todo/:id: Rute untuk menghapus satu entri todo berdasarkan ID.
 
 4. Silakan gunakan koleksi Postman yang telah diimpor untuk menguji API dengan menggunakan rute-rute yang disebutkan di atas.
