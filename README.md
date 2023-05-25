@@ -79,8 +79,16 @@ Contoh Request Body :
 	"password": "123",
 }
 ```
+Contoh Token JWT yang didapatkan pada header :
+```sha
+Authorization = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbmlAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjMiLCJpYXQiOjE2ODQ5MTMzODUsImV4cCI6MTY4NDkxMzQ0NX0.aDB0woP1HodszxFLioNlO72TE3Uc83Wmd8a5OB8dvPg
+```
 
-3. Setelah berhasil login, Anda dapat menggunakan token JWT yang dihasilkan untuk mengakses rute-rute operasi todo berikut:
+3. Setelah berhasil login, Anda dapat menggunakan token JWT yang dihasilkan pada header dengan nama 'Authorization' untuk mengakses rute-rute operasi todo berikut:
+Contoh Penggunaan Token JWT pada header :
+```sha
+Authorization = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbmlAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjMiLCJpYXQiOjE2ODQ5MTMzODUsImV4cCI6MTY4NDkxMzQ0NX0.aDB0woP1HodszxFLioNlO72TE3Uc83Wmd8a5OB8dvPg
+```
 - POST http://localhost:3030/todo: Rute untuk membuat entri todo baru.  
 Contoh Request Body :
 ```sha
@@ -99,6 +107,6 @@ Contoh Request Body :
 ```
 - DELETE http://localhost:3030/todo/:id: Rute untuk menghapus satu entri todo berdasarkan ID.
 
-4. Silakan gunakan koleksi Postman yang telah diimpor untuk menguji API dengan menggunakan rute-rute yang disebutkan di atas.
+5. Silakan gunakan koleksi Postman yang telah diimpor untuk menguji API dengan menggunakan rute-rute yang disebutkan di atas.
 
 **Terima kasih telah menggunakan webservice Restful API ini!**
