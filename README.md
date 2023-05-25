@@ -65,18 +65,18 @@ Untuk melakukan pengujian API, Anda dapat menggunakan Postman atau alat serupa. 
 Contoh Request Body :
 ```sha
 {
-	"nama": "dani",
-	"email": "dani@gmail.com",
-	"password": "123",
-	"confPassword": "123"
+  "nama": "dani",
+  "email": "dani@gmail.com",
+  "password": "123",
+  "confPassword": "123"
 }
 ```
 - POST http://localhost:3030/login: Rute untuk melakukan login dan menghasilkan token JWT yang disimpan di header 'Authorization' dengan waktu kadaluwarsa 60 detik.  
 Contoh Request Body :
 ```sha
 {
-	"email": "dani@gmail.com",
-	"password": "123",
+  "email": "dani@gmail.com",
+  "password": "123",
 }
 ```
 Contoh Token JWT yang didapatkan pada header :
@@ -93,7 +93,7 @@ Authorization = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbmlA
 Contoh Request Body :
 ```sha
 {
-	"todo": "Saya akan makan"
+  "todo": "Saya akan makan"
 }
 ```
 - GET http://localhost:3030/todos: Rute untuk melihat semua entri todo.
@@ -102,7 +102,7 @@ Contoh Request Body :
 Contoh Request Body :
 ```sha
 {
-	"todo": "Saya akan belajar"
+  "todo": "Saya akan belajar"
 }
 ```
 - DELETE http://localhost:3030/todo/:id: Rute untuk menghapus satu entri todo berdasarkan ID.
